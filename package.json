@@ -1,0 +1,26 @@
+{
+  "name": "toolkit",
+  "version": "1.0.0",
+  "description": "本文件夹保存了大量工具函数，由许多模块来导出。",
+  "main": "csvAPI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@data-forge-plot/render": "^0.0.5",
+    "assert": "^2.0.0",
+    "csv-parse": "^4.15.4",
+    "data-forge": "^1.8.17",
+    "data-forge-fs": "^0.0.9",
+    "data-forge-plot": "^0.6.3",
+    "formulajs": "^1.0.8",
+    "papaparse": "^5.3.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "nodemon": "^2.0.7"
+  }
+}
