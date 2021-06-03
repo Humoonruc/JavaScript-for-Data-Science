@@ -4,6 +4,15 @@
 
 ## 数据处理的标准流程
 
+- 导入数据
+- 概览数据结构和特征
+- 转化为标准的数据框
+- 根据需求进行数据处理
+- 导出数据
+- 前端可视化
+  - 如果可视化逻辑比较简单，就不需要数据库，建成静态网站即可。根目录不需要 app.js
+  - 如果可视化逻辑比较复杂，还包含大量的互动逻辑，再考虑建成动态网站。
+
 ## 工程化工具
 
 ### nodemon
@@ -65,7 +74,7 @@ live-server # 自动打开默认浏览器，在浏览器界面点击 HTML 文件
 自动生成文档的命令：
 
 ```shell
-jsdoc -R ./README.md -r ./src/ -d ./docs/
+jsdoc -R ./README.md -r ./src/ -d ./public/docs/
 ```
 
 ## 工具脚本
@@ -80,13 +89,15 @@ jsdoc -R ./README.md -r ./src/ -d ./docs/
 
 另外一处使用说明：[JavaScript for Data Science (js4ds.org)](http://js4ds.org/#s:dataforge)
 
+#### 安装
+
 ```shell
 npm i --save data-forge
 npm i --save data-forge-fs
 npm i --save data-forge-plot @data-forge-plot/render
 ```
 
-
+#### 使用
 
 ```js
 const DF = require('data-forge');

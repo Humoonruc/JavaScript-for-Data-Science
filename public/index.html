@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <title>My prototype web page</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js"></script>
+</head>
+
+<body>
+
+  <h2><a href="./docs/index.html">Documents</a></h2>
+  <div id="plotly" style="width:80%;height:500px;"></div>
+
+  <script>
+
+    const plotDiv = document.querySelector('#plotly');
+    (async () => {
+      csvData = await d3.csv('./output/trend_output.csv');
+      const trace = {
+        x: csvData.map(obj => obj['Month#']),
+        y: csvData.map(obj => obj.Trend),
+        name: 'Forecast by 6 ex-months',
+        mode: 'lines+markers',
+      };
+      const dataSet = [trace];
+      const layout = {
+        showlegend: true,
+        legend: {
+          bgcolor: 'yellow',
+          font: {
+            family: 'Microsoft YaHei',
+            color: 'black',
+          },
+          traceorder: 'reversed+grouped',
+          itemclick: 'toggle',
+        },
+        title: {
+          text: 'Car Accidents',
+          font: {
+            size: 28,
+            color: 'black',
+          },
+        },
+        xaxis: {
+          title: {
+            text: 'Month#',
+            font: {
+              size: 20,
+              color: 'black',
+            },
+          },
+        },
+        yaxis: {
+          title: {
+            text: 'Fatalities',
+            font: {
+              size: 20,
+              color: 'black',
+            },
+          },
+        },
+        paper_bgcolor: 'lightgrey',
+        plot_bgcolor: 'white'
+      }
+      Plotly.newPlot(plotDiv, dataSet, layout);
+    })()
+
+  </script>
+</body>
+
+</html>
