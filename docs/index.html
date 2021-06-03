@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><p>[TOC]</p>
+<h1>JavaScript for Data Science</h1>
+<h2>数据处理的标准流程</h2>
+<ul>
+<li>导入数据</li>
+<li>概览数据结构和特征</li>
+<li>转化为标准的数据框</li>
+<li>根据需求进行数据处理</li>
+<li>导出数据</li>
+<li>前端可视化
+<ul>
+<li>如果可视化逻辑比较简单，就不需要数据库，建成静态网站即可。根目录不需要 app.js</li>
+<li>如果可视化逻辑比较复杂，还包含大量的互动逻辑，再考虑建成动态网站。</li>
+</ul>
+</li>
+</ul>
+<h2>工程化工具</h2>
+<h3>nodemon</h3>
+<p>自动检测脚本文件的变化并 reload</p>
+<pre class="prettyprint source lang-shell"><code>npm install --save-dev nodemon
+nodemon app.js
+</code></pre>
+<p>如果没有在应用中指定端口，可以在命令中指定：</p>
+<pre class="prettyprint source lang-shell"><code>nodemon ./server.js localhost 8080
+</code></pre>
+<pre class="prettyprint source lang-shell"><code>nodemon --config nondemon.json # 指定配置文件
+</code></pre>
+<p>配置文件例：</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;restartable&quot;: &quot;rs&quot;,
+  &quot;ignore&quot;: [
+    &quot;.git&quot;,
+    &quot;node_modules/**/node_modules&quot;
+  ],
+  &quot;verbose&quot;: true,
+  &quot;execMap&quot;: {
+    &quot;js&quot;: &quot;node --harmony&quot;
+  },
+  &quot;events&quot;: {
+    &quot;restart&quot;: &quot;osascript -e 'display notification \&quot;App restarted due to:\n'$FILENAME'\&quot; with title \&quot;nodemon\&quot;'&quot;
+  },
+  &quot;watch&quot;: [
+    &quot;src/&quot;
+  ],
+  &quot;env&quot;: {
+    &quot;NODE_ENV&quot;: &quot;development&quot;
+  },
+  &quot;ext&quot;: &quot;js,json&quot;
+}
+</code></pre>
+<h3>live-server</h3>
+<p>自动检测 html 文件及其引用文件的变化并 reload</p>
+<pre class="prettyprint source lang-shell"><code>npm i --save-dev live-server
+live-server # 自动打开默认浏览器，在浏览器界面点击 HTML 文件即可
+</code></pre>
+<h3>JSDoc</h3>
+<p>自动生成文档的命令：</p>
+<pre class="prettyprint source lang-shell"><code>jsdoc -R ./README.md -r ./src/ -d ./docs/
+</code></pre>
+<h2>工具脚本</h2>
+<p><code>./src/toolkit/</code>文件夹保存了大量工具函数，用于简化 JS 中对数据的操作。</p>
+<p>积累自己的工具集，是非常好的习惯。</p>
+<h3>Data-Forge 模块</h3>
+<p>官网：<a href="http://www.data-forge-js.com/">Data-Forge (data-forge-js.com)</a></p>
+<p>另外一处使用说明：<a href="http://js4ds.org/#s:dataforge">JavaScript for Data Science (js4ds.org)</a></p>
+<h4>安装</h4>
+<pre class="prettyprint source lang-shell"><code>npm i --save data-forge
+npm i --save data-forge-fs
+npm i --save data-forge-plot @data-forge-plot/render
+</code></pre>
+<h4>使用</h4>
+<pre class="prettyprint source lang-js"><code>const DF = require('data-forge');
+require('data-forge-fs');
+require('data-forge-plot');
+require('@data-forge-plot/render');
+</code></pre></article>
+    </section>
+
+
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>exploratoryDataAnalysis.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">探索性数据分析的一般流程</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="exploratoryDataAnalysis.js.html">exploratoryDataAnalysis.js</a>, <a href="exploratoryDataAnalysis.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>toolkit/csvAPI.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">读、写、转换 CSV 的函数集</div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Humoonruc</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="toolkit_csvAPI.js.html">toolkit/csvAPI.js</a>, <a href="toolkit_csvAPI.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#jsonToCsvString">jsonToCsvString</a></li><li><a href="global.html#readCsvFile">readCsvFile</a></li><li><a href="global.html#writeCsvFile">writeCsvFile</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu Jun 03 2021 19:26:40 GMT+0800 (中国标准时间)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

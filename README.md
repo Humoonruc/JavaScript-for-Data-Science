@@ -74,7 +74,7 @@ live-server # 自动打开默认浏览器，在浏览器界面点击 HTML 文件
 自动生成文档的命令：
 
 ```shell
-jsdoc -R ./README.md -r ./src/ -d ./public/docs/
+jsdoc -R ./README.md -r ./src/ -d ./docs/
 ```
 
 ## 工具脚本
