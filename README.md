@@ -2,6 +2,10 @@
 
 # JavaScript for Data Science
 
+项目首页：(尚未托管)
+
+文档地址：https://humoonruc.github.io/JavaScript-for-Data-Science/
+
 ## 数据处理的标准流程
 
 - 导入数据
@@ -11,6 +15,7 @@
 - 导出数据
 - 前端可视化
   - 如果可视化逻辑比较简单，就不需要数据库，建成静态网站即可。根目录不需要 app.js
+    - 用`D3.js`和`Plotly.js`即可，无需用 `jQuery`
   - 如果可视化逻辑比较复杂，还包含大量的互动逻辑，再考虑建成动态网站。
 
 ## 工程化工具
