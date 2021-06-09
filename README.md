@@ -67,7 +67,7 @@ nodemon --config nondemon.json # 指定配置文件
 
 ### live-server
 
-自动检测 html 文件及其引用文件的变化并 reload
+自动检测文件夹中文件的变化并 reload
 
 ```shell
 npm i --save-dev live-server
